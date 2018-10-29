@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 export default function Cunter() {
     const [count, setCount] = useState(0);
     const [title, setTitle] = useState('hello-react');
-    const h1 = useRef(null);
     useEffect(() => {
         console.log('effect')
         return () => {
