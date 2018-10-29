@@ -75,6 +75,9 @@ function Counter() {
 ### useReducer
 这个函数简直和redux一模一样了，不多介绍。
 
+### custom hooks & todo-app
+我们可以把hooks函数抽象出来，实现复用，具体怎么用，还是看下代码吧。
+
 ### 注意点
 - hooks函数可以让你用function组件来完成很多class组件的生命周期函数，但是目前还不支持`getSnapshotBeforeUpdate`和`componentDidCatch`，但是不能在class函数组件中使用，同时也不建议一个项目里面两者混用，保持团队的一致性。
 - hooks函数在函数组件中最好写在Top Level，当然也不是非要这样，主要是要保证每次组件render的时候都写入一致的hooks函数，不要根据某个条件判断决定是否要使用hooks。 
