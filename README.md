@@ -76,7 +76,7 @@ function Counter() {
 这个函数简直和redux一模一样了，不多介绍。
 
 ### custom hooks & todo-app
-我们可以把hooks函数抽象出来，实现复用，具体怎么用，还是看下代码吧。
+原本class组件中对于state的变化、修改，我们很难可以把hooks函数抽象出来，实现复用，但是基于hooks函数，你就完全可以做到这一点。React官网也说了[useYourImagination](https://reactjs.org/docs/hooks-custom.html#useyourimagination)，所以具体如何复用要结合实际项目进行抽离，这里的话，我也写了一个[DEMO]()，大家可以看一下。
 
 ### 注意点
 - hooks函数可以让你用function组件来完成很多class组件的生命周期函数，但是目前还不支持`getSnapshotBeforeUpdate`和`componentDidCatch`，但是不能在class函数组件中使用，同时也不建议一个项目里面两者混用，保持团队的一致性。

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.1.0",
+    "@koa/cors": "^2.2.2",
     "@svgr/webpack": "2.4.1",
     "antd": "^3.10.3",
     "babel-core": "7.0.0-bridge.0",
@@ -32,6 +33,9 @@
     "jest": "23.6.0",
     "jest-pnp-resolver": "1.0.1",
     "jest-resolve": "23.6.0",
+    "koa": "^2.6.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
     "mini-css-extract-plugin": "0.4.3",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.1.0",
@@ -55,6 +59,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "server": "node server.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
@@ -107,12 +112,15 @@
     "presets": [
       "react-app"
     ],
-    "plugins":[
-      ["import",{
-        "libraryName":"antd",
-        "libraryDirectory":"es",
-        "style":"css"
-      }]
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "libraryDirectory": "es",
+          "style": "css"
+        }
+      ]
     ]
   },
   "devDependencies": {

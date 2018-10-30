@@ -1,15 +1,21 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 
-function useIsEditing(initValue,num) {
-    const [isEditing,setIsEditing] = useState(initValue);
-    if(isEditing){
-        console.log(`正在编辑第${num}条todo`)
+const useInputValue = initValue => {
+  const [inputValue, setInputValue] = useState(initValue);
+  return {
+    inputValue,
+    changeHandler:ev => {
+      setInputValue(ev.target.value)
+    },
+    confirmHandler:(ev,callback) => {
+      if(ev.keycode === 13 || ev.which === 13){
+        const value = ev.target.value
+        setInputValue(value);
+        callback(value);
+      }
     }
-    return {
-        isEditing,
-        setIsEditing
-    }
+  }
 }
 
-export {useIsEditing}
+export { useInputValue }
 
